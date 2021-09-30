@@ -6,15 +6,51 @@ export const postData = (data) => {
     payload: axiosApiIntances.post('post/', data),
   };
 };
+export const postComment = (data) => {
+  return {
+    type: "COMMENT",
+    payload: axiosApiIntances.post('comment/', data),
+  };
+};
 export const getListUser = () => {
   return {
     type: "USER",
     payload: axiosApiIntances.get("/users"),
   };
 };
-export const getPostUser = () => {
+export const getPostUser = (Id) => {
   return {
     type: "GET_POST_USER",
-    payload: axiosApiIntances.get("/posts?userId=2"),
+    payload: axiosApiIntances.get(`/posts/${Id}`),
+  };
+};
+export const getComentPostsById = (Id) => {
+  return {
+    type: "GET_POSTT",
+    payload: axiosApiIntances.get(`/posts/${Id}/comments`),
+  };
+};
+export const updateData = (id, data) => {
+  return {
+    type: "UPDATE_POSTS",
+    payload: axiosApiIntances.patch(`posts/${id}`, data),
+  };
+};
+export const updateComment = (id, data) => {
+  return {
+    type: "UPDATE_COMMENT",
+    payload: axiosApiIntances.patch(`comment/${id}`, data),
+  };
+};
+export const deleteData = (id) => {
+  return {
+    type: "DELETE_POSTS",
+    payload: axiosApiIntances.delete(`posts/${id}`),
+  };
+};
+export const deleteComment = (id) => {
+  return {
+    type: "DELETE_COMMENT",
+    payload: axiosApiIntances.delete(`comment/${id}`),
   };
 };

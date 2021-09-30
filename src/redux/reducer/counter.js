@@ -78,6 +78,30 @@ const app = (state = initialState, action) => {
         msg: action.payload.data.msg,
         pagination: {},
       };
+    case "GET_POSTT_PENDING":
+      return {
+        ...state,
+        isLoading: true,
+        isError: false,
+      };
+    case "GET_POSTT_FULFILLED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: false,
+        datapostUser: action.payload.data.data,
+        msg: action.payload.data.msg,
+        pagination: action.payload.data.pagination,
+      };
+    case "GET_POSTT_REJECTED":
+      return {
+        ...state,
+        isLoading: false,
+        isError: true,
+        datapostUser: [],
+        msg: action.payload.data.msg,
+        pagination: {},
+      };
 
     default:
       return state;
