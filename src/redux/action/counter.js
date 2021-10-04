@@ -3,13 +3,13 @@ import axiosApiIntances from "../../utils/axios";
 export const postData = (data) => {
   return {
     type: "POST",
-    payload: axiosApiIntances.post('post/', data),
+    payload: axiosApiIntances.post('posts/', data),
   };
 };
 export const postComment = (data) => {
   return {
     type: "COMMENT",
-    payload: axiosApiIntances.post('comment/', data),
+    payload: axiosApiIntances.post('comments/', data),
   };
 };
 export const getListUser = () => {
@@ -21,7 +21,7 @@ export const getListUser = () => {
 export const getPostUser = (Id) => {
   return {
     type: "GET_POST_USER",
-    payload: axiosApiIntances.get(`/posts/${Id}`),
+    payload: axiosApiIntances.get(`/posts?userId=${Id}`),
   };
 };
 export const getComentPostsById = (Id) => {
@@ -39,7 +39,7 @@ export const updateData = (id, data) => {
 export const updateComment = (id, data) => {
   return {
     type: "UPDATE_COMMENT",
-    payload: axiosApiIntances.patch(`comment/${id}`, data),
+    payload: axiosApiIntances.patch(`comments/${id}`, data),
   };
 };
 export const deleteData = (id) => {
@@ -51,6 +51,6 @@ export const deleteData = (id) => {
 export const deleteComment = (id) => {
   return {
     type: "DELETE_COMMENT",
-    payload: axiosApiIntances.delete(`comment/${id}`),
+    payload: axiosApiIntances.delete(`comments/${id}`),
   };
 };

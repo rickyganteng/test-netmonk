@@ -11,20 +11,20 @@ class Cards extends Component {
     });
   };
   render() {
-    const {
-      id,
-      name
-    } = this.props.data;
+    // const {
+    //   id,
+    //   name
+    // } = this.props.data;
     return (
       <>
         <Card >
 
           <Card.Body className="text-center">
-            <Card.Text className={styles.category}>{name}</Card.Text>
+            <Card.Text className={styles.category}></Card.Text>
             <Button
               className={styles.btMoon}
               variant="outline-primary"
-              onClick={() => this.handleRoom(id)}
+              onClick={() => this.handleRoom}
             >
               <div className={styles.btCnt}>Details</div>
             </Button>

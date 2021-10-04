@@ -24,6 +24,11 @@
   border: none;
   cursor: pointer;
 }
+.fixed {
+  position: fixed;
+}
+/* .relative {
+} */
 .border {
   border-style: solid;
   border-width: 2px;
